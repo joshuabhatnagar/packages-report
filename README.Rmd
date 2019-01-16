@@ -1,0 +1,52 @@
+---
+output: github_document
+---
+
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+library(tidyverse)
+library(here)
+```
+
+## Overview
+
+The goal of packages-report is to summarize the analysis of my R package installations.
+
+```{r, include = FALSE}
+## load data/add-on-packages-freqtable.csv here in this chunk
+addOnPackagesFreqTable <- read_csv(here("data", "add-on-packages-freqtable.csv"))
+```
+
+I have `r sum(addOnPackagesFreqTable$n)` add-on packages installed.
+
+Here's how they break down in terms of which version of R they were built under, which is related to how recently they were updated on CRAN.
+
+```{r, echo = FALSE, fig.align='center'}
+## print the frequency table here
+knitr::kable(addOnPackagesFreqTable)
+```
+
+![](figs/built-barchart.png)
+
+### Flow of the analysis
+
+There are four scripts saved within the subdirectory `scripts` used to conduct the analysis:
+
+1. The first script, `01_write-installed-packages.R`, creates a dataframe of my currently installed packages.
+2. The second script, `02_wrangle-packages.R`, creates two files, one containing all of my add-on packages and another containing the break down in terms of which version of R the add-on packages were built under.
+3. The third script, `03_barchart-packages-built.R`, creates a plot of the frequency table created in the second script.
+
+To run the analysis in one easy step, the fourth script, `04_whole-analysis.R`, creates the necessary subdirectories if they don't exist and sources the first three scripts.
+
+<details>
+
+<summary>Session info</summary>
+```{r}
+devtools::session_info()
+```
+
+</details>
