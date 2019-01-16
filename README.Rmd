@@ -14,7 +14,7 @@ library(here)
 
 ## Overview
 
-The goal of packages-report is to summarize the analysis of my R package installations.
+The goal of packages-report is to summarize my R package installations.
 
 ```{r, include = FALSE}
 ## load data/add-on-packages-freqtable.csv here in this chunk
