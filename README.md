@@ -1,8 +1,7 @@
 
 ## Overview
 
-The goal of packages-report is to summarize the analysis of my R package
-installations.
+The goal of packages-report is to summarize my R package installations.
 
 I have 225 add-on packages installed.
 
