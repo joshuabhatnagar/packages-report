@@ -15,7 +15,7 @@ myAddOnPackages <- myInstalledPackages %>%
 write_csv(myAddOnPackages, here::here("data", "add-on-packages.csv"))
 
 ## make a frequency table of package by the version in Built
-myAddOnPackages_freqtable <- myUniquePackages %>%
+myAddOnPackages_freqtable <- myAddOnPackages %>%
   count(Built) %>%
   mutate(prop = n / sum(n))
 
